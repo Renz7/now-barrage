@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import {Alert, Button, FormControl, InputGroup} from "react-bootstrap";
-import {ipcRenderer} from "electron";
+import React, { Component } from 'react';
+import { Alert, Button, FormControl, InputGroup } from 'react-bootstrap';
+import { ipcRenderer } from 'electron';
 
 class Barrage extends Component<any, any> {
   constructor(prop: any) {
     super(prop);
     this.state = {
-      roomId: "",
+      roomId: '',
       barrage: 0
-    }
+    };
   }
 
   render() {
@@ -36,8 +36,8 @@ class Barrage extends Component<any, any> {
           />
         </InputGroup>
         <Button className={"Button"} onClick={() => {
-          console.log("send barrage")
-          console.log(ipcRenderer.sendSync("barrage", this.state));
+          console.log('send barrage');
+          console.log(ipcRenderer.send('barrage', this.state));
         }
         }>
           发送

@@ -1,4 +1,4 @@
-export interface Resp<data> {
+export default interface Resp<data> {
   retcode: number
   result?: data
 }
